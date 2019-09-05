@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">Send Email Alarmmanager</string>
+
+    <string name="notification_title">This is Alert!</string>
+    <string name="notification_title_boot">This is Alert! After Boot</string>
+    <string name="notification_text">From Alarm Example!</string>
+    <string name="notification_text_boot">From Alarm Example! Boot </string>
+    <string name="time">Time</string>
+    <string name="send_notification2">Send Notification</string>
+
+</resources>
