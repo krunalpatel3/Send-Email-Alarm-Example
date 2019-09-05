@@ -55,7 +55,8 @@ public class SendEmailTask extends BroadcastReceiver {
                     notificationManager.notify(NOTIFICATION_ID, builder.build());
 
                     SharedPreferenceTime localData = new SharedPreferenceTime(context);
-                    Scheduler.setReminder(context, SendEmailTask.class, localData.get_hour(), localData.get_min());
+                    Scheduler.setReminder(context, SendEmailTask.class, localData.get_hour(),
+                            localData.get_min());
                     return;
                 }
 
@@ -64,7 +65,8 @@ public class SendEmailTask extends BroadcastReceiver {
                     Log.d("onReceive", "onReceive: ACTION_TIME_CHANGED");
 //                Toast.makeText(context,"After Boot",Toast.LENGTH_SHORT).show();
                     SharedPreferenceTime localData = new SharedPreferenceTime(context);
-                    Scheduler.setReminder(context, SendEmailTask.class, localData.get_hour(), localData.get_min());
+                    Scheduler.setReminder(context, SendEmailTask.class,
+                            localData.get_hour(), localData.get_min());
                     return;
                 }
 
@@ -82,7 +84,8 @@ public class SendEmailTask extends BroadcastReceiver {
                     Log.d("onReceive", "onReceive: ACTION_REBOOT");
 //                Toast.makeText(context,"After Boot",Toast.LENGTH_SHORT).show();
                     SharedPreferenceTime localData = new SharedPreferenceTime(context);
-                    Scheduler.setReminder(context, SendEmailTask.class, localData.get_hour(), localData.get_min());
+                    Scheduler.setReminder(context, SendEmailTask.class, localData.get_hour(),
+                            localData.get_min());
                     return;
                 }
 
@@ -91,7 +94,8 @@ public class SendEmailTask extends BroadcastReceiver {
                     Log.d("onReceive", "onReceive: android.intent.action.QUICKBOOT_POWERON");
 //                Toast.makeText(context,"After Boot",Toast.LENGTH_SHORT).show();
                     SharedPreferenceTime localData = new SharedPreferenceTime(context);
-                    Scheduler.setReminder(context, SendEmailTask.class, localData.get_hour(), localData.get_min());
+                    Scheduler.setReminder(context, SendEmailTask.class,
+                            localData.get_hour(), localData.get_min());
                     return;
                 }
             }
@@ -127,10 +131,9 @@ public class SendEmailTask extends BroadcastReceiver {
                 Log.e("Sent", "Send Email from BackGround call onReceive");
 
                 List<String> emaiList = new ArrayList<>();
-                emaiList.add("rushangbhavani@gmail.com");
-                emaiList.add("nathanitest1234@gmail.com");
-                emaiList.add("naitik.talia@gmail.com");
-                emaiList.add("pravin@nathanisoftware.com");
+                emaiList.add("abcd1@gmail.com");
+                emaiList.add("abcd2@gmail.com");
+                emaiList.add("abcd3@gmail.com");
 
 
                 Thread thread = new Thread(new Runnable() {
@@ -143,8 +146,9 @@ public class SendEmailTask extends BroadcastReceiver {
                         //check send status
 
                         Log.e("run", "run call");
-                        Email androidEmail = new Email("noreply@nathanisoftware.com",
-                                "1234567@nspl", emaiList, "Email for final Testing using AlarmManager Moto G2",
+                        Email androidEmail = new Email("senderEmail@gmail.com",
+                                "sender_email_pass_here", emaiList,
+                                "Email for final Testing using AlarmManager Moto G2",
                                 "a.setInexactRepeating(AlarmManager.RTC_WAKEUP, calendar2.getTimeInMillis(), AlarmManager.INTERVAL_DAY, p1);" +
                                         "Oreo api 28 time Ever 1:30 PM Boot");
 
